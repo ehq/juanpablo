@@ -1,4 +1,4 @@
-use Rack::Static, :urls => ["/css", "/images", "/js"]
+use Rack::Static
 
 run lambda { |env|
   [
