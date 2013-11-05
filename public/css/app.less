@@ -1,1 +1,136 @@
-h1 { color: blue; }
+@import "reset";
+@import "mixins";
+
+html {
+  background: #E5E5E5;
+  font-size: 100%;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+body {
+  position: relative;
+	background: url("/img/bg.jpg") left top no-repeat;
+  background-size: 100%;
+  height: 0;
+  width: 100%;
+  padding-bottom: 53.15%;
+}
+
+.hanging_lamp {
+  background: url("/img/light.png") left top no-repeat;
+  background-size: 200%;
+  position: absolute;
+  width: 6.95%;
+  height: 27%;
+  top: 0;
+  left: 50%;
+  margin-left: -4%;
+  z-index: 2;
+
+  -webkit-animation: light 0.25s steps(2, end) infinite;
+  -moz-animation: light 0.25s steps(2, end) infinite;
+  -ms-animation: light 0.25s steps(2, end) infinite;
+  -o-animation: light 0.25s steps(2, end) infinite;
+  animation: light 0.25s steps(2, end) infinite;
+
+  .light {
+    .border-radius(11px 11px 17px 17px);
+    .box-shadow(~"0 0 200px rgb(255,255,255), 0 0 20px rgb(255,255,255)");
+    background: #FFF;
+    position: absolute;
+    top: 123px;
+    width: 29%;
+    height: 17%;
+    left: 41px;
+  }
+}
+
+
+.jp_logo {
+  .rotate(-10deg);
+  background: url("/img/jp_logo.png") right top no-repeat;
+  background-size: 2500%;
+  width: 7.7%;
+  height: 27.7%;
+  z-index: 2;
+  position: absolute;
+  margin: 0px auto;
+  text-indent: -9999px;
+  top: 40%;
+  left: 25%;
+
+  -webkit-animation: logo 2.5s steps(25, end) 1;
+  -moz-animation: logo 2.5s steps(25, end) 1;
+  -ms-animation: logo 2.5s steps(25, end) 1;
+  -o-animation: logo 2.5s steps(25, end) 1;
+  animation: logo 2.5s steps(25, end) 1;
+}
+
+h1 {
+  font-family: 'Short Stack', cursive;
+  position: absolute;
+  font-size: 1.5em;
+  color: #FFF;
+  top: 45%;
+  left: 35%;
+  width: 10px;
+  line-height: 1em;
+}
+
+.desk {
+  background: url("/img/desk.png") right top no-repeat;
+  background-size: 100%;
+  width: 20%;
+  height: 27.7%;
+  z-index: 2;
+  position: absolute;
+  margin: 0px auto;
+  text-indent: -9999px;
+  bottom: 0;
+  right: 15%;
+}
+
+@-webkit-keyframes logo {
+  from { background-position: left top; }
+  to { background-position: 208.35% top; }
+}
+@-moz-keyframes logo {
+  from { background-position: left top; }
+  to { background-position: 208.35% top; }
+}
+@-ms-keyframes logo {
+  from { background-position: left top; }
+  to { background-position: 208.35% top; }
+}
+@-o-keyframes logo {
+  from { background-position: left top; }
+  to { background-position: 208.35% top; }
+}
+@keyframes logo {
+  from { background-position: left top; }
+  to { background-position: 104.2% top; }
+}
+
+
+@-webkit-keyframes light {
+  from { background-position: 0px; }
+  to { background-position: 200%; }
+}
+@-moz-keyframes light {
+  from { background-position: 0px; }
+  to { background-position: 200%; }
+}
+@-ms-keyframes light {
+  from { background-position: 0px; }
+  to { background-position: 200%; }
+}
+@-o-keyframes light {
+  from { background-position: 0px; }
+  to { background-position: 200%; }
+}
+@keyframes light {
+  from { background-position: 0px; }
+  to { background-position: 200%; }
+}
