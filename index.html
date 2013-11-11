@@ -1,18 +1,92 @@
 <html>
   <head>
     <title>Juan Pablo Troncoso</title>
-    <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Short+Stack|Delius|Delius+Unicase' rel='stylesheet' type='text/css'>
     <link rel="stylesheet/less" type="text/css" href="/css/app.less" />
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
     <script src="/js/less.js" type="text/javascript"></script>
     <script src="/js/main.js" type="text/javascript"></script>
   </head>
 
   <body>
-  	<div class="hanging_lamp"></div>
-    <div class="jp_logo"></div>
-    <div class="desk"></div>
-    <div class="stand"></div>
+    <section id="presentation">
+      <div class="container">
+        <figure class="slideDown">
+          <img src="/img/photo.jpg" width="100%" />
+        </figure>
+        <header>
+          <h1>
+            Hey, I'm Juan Pablo.
+          </h1>
+          <h2>
+            and I'm a Web Designer.
+          </h2>
+        </header>
+      </div>
+      <span class="scrollDown" href="#contact">&#8744;</span>
+    </section>
+    <section id="contact">
+      <span class="scrollUp" href="#presentation">&#8743;</span>
+      <div class="container">
+        <figure>
+        </figure>
+        <figure>
+        </figure>
+      </div>
+      <span class="scrollDown" href="#creation">&#8744;</span>
+    </section>
+
+    <section id="creation">
+      <span class="scrollUp" href="#contact">&#8743;</span>
+      <div class="container">
+        <figure class="one"></figure>
+        <span class="arrow_right one"></span>
+        <figure class="two"></figure>
+        <span class="arrow_right two"></span>
+        <figure class="three"></figure>
+      </div>
+      <span class="scrollDown" href="#abilities">&#8744;</span>
+    </section>
+
+    <section id="abilities">
+      <span class="scrollUp" href="#creation">&#8743;</span>
+      <div class="container">
+        <div class="bar one">
+          <span>Design</span>
+        </div>
+        <div class="bar two">
+          <span>Code</span>
+        </div>
+        <div class="bar three">
+          <span>Expertise</span>
+        </div>
+        <div class="bar four">
+          <span>Coolness</span>
+        </div>
+      </div>
+      <span class="scrollDown" href="#hobbies">&#8744;</span>
+    </section>
+
+    <section id="hobbies">
+      <span class="scrollUp" href="#abilities">&#8743;</span>
+      <div class="container">
+        <figure>
+          <img src="/img/shuriken.png" width="250px"></img>
+        </figure>
+        <header>
+          <h1>
+            In my spare time...
+          </h1>
+          <h2>
+            I'm a freaking Ninja!
+          </h2>
+        </header>
+        <div class="eyes"></div>
+      </div>
+    </section>
   </body>
 </html>

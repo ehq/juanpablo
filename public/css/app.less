@@ -1,108 +1,371 @@
 @import "reset";
 @import "mixins";
+@import "animations";
 
-html {
-  background: #E5E5E5;
+html, body {
+  background: #D0E2E9;
   font-size: 100%;
-  height: 100%;
-  min-height: 100%;
-  max-height: 100%;
+  min-width: 320px;
 }
 
 body {
   position: relative;
-	background: url("/img/bg.jpg") left top no-repeat;
-  background-size: 100%;
-  height: 0;
-  width: 100%;
-  padding-bottom: 53.15%;
+  font-family: 'Lora', serif;
+	background: #E9F5FA;
 }
 
-.hanging_lamp {
-  background: url("/img/light.png") left top no-repeat;
-  background-size: 200%;
-  position: absolute;
-  width: 6.95%;
-  height: 27%;
-  top: 0;
-  left: 50%;
-  margin-left: -4%;
-  z-index: 2;
+section {
+  display: block;
+  clear: both;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 
-  -webkit-animation: light 0.25s steps(2, end) infinite;
-  -moz-animation: light 0.25s steps(2, end) infinite;
-  -ms-animation: light 0.25s steps(2, end) infinite;
-  -o-animation: light 0.25s steps(2, end) infinite;
-  animation: light 0.25s steps(2, end) infinite;
+  &#presentation { background: #D0E2E9; }
+  &#abilities { background: #9de2ce; }
+  &#creation { background: #ec6f66; }
+  &#contact { background: #E2E2E2; }
+  &#hobbies { background: #333; }
 
-  .light {
-    .border-radius(11px 11px 17px 17px);
-    .box-shadow(~"0 0 200px rgb(255,255,255), 0 0 20px rgb(255,255,255)");
-    background: #FFF;
+  .scrollDown,
+  .scrollUp {
+    cursor: pointer;
     position: absolute;
-    top: 123px;
-    width: 29%;
-    height: 17%;
-    left: 41px;
+    bottom: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    width: 100%;
+    padding: 1% 0;
+    display: block;
+    text-align: center;
+    color: #999;
+    &:hover {
+      background: rgba(0,0,0,.05);
+      color: #FFF;
+    }
+  }
+  .scrollUp { bottom: auto; top: 0; }
+}
+
+#presentation {
+  .container {
+    position: absolute;
+    top: 50%;
+    margin: -100px 0 0;
+    text-align: center;
+    height: 200px;
+    width: 80%;
+    padding: 0 10%;
+
+    figure {
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 20%;
+      margin: 0 5%;
+      visibility: hidden;
+
+      img {
+        .border-radius(100%);
+        .opacity(90);
+      }
+    }
+
+    header {
+      font-family: 'Ubuntu', sans-serif;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: right;
+      .opacity(0);
+      width: 45%;
+      .transition(all 1.25s linear);
+
+      &.show {
+        .opacity(100);
+      }
+
+      h1, h2 {
+        letter-spacing: 0.05em;
+        color: #666;
+        line-height: 1.75em;
+        font-size: 2em;
+      }
+
+      h2 { text-align: right; }
+
+      h1 {
+        font-size: 3em;
+      }
+    }
+  }
+}
+
+#abilities {
+  .container {
+    position: absolute;
+    top: 50%;
+    margin: -200px 0 0;
+    text-align: center;
+    height: 400px;
+    width: 80%;
+    padding: 0 10%;
+
+    .bar {
+      position: relative;
+      .border-radius(10px 10px 0 0);
+      .transition(all .5s ease-in-out);
+      .opacity(0);
+      display: inline-block;
+      vertical-align: bottom;
+      background: #705b90;
+      width: 10%;
+      margin-right: 5%;
+
+      &.one { height: 60%; }
+      &.two { height: 75%; }
+      &.three { height: 40%; }
+      &.four { height: 100%; }
+
+      &.pullUp { .opacity(100); }
+    }
+
+    span {
+      font-family: 'Ubuntu', sans-serif;
+      color: #705b90;
+      width: 100%;
+      margin-right: 5%;
+      text-align: center;
+      font-size: 1.5em;
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+    }
   }
 }
 
 
-.jp_logo {
-  .rotate(-10deg);
-  background: url("/img/jp_logo.png") right top no-repeat;
-  background-size: 2500%;
-  width: 7.7%;
-  height: 27.7%;
-  z-index: 2;
-  position: absolute;
-  margin: 0px auto;
-  text-indent: -9999px;
-  top: 40%;
-  left: 25%;
+#creation {
+  .container {
+    position: absolute;
+    top: 50%;
+    margin: -75px 0 0;
+    text-align: center;
+    height: 150px;
+    width: 80%;
+    padding: 0 10%;
 
-  -webkit-animation: logo 2.5s steps(25, end) 1;
-  -moz-animation: logo 2.5s steps(25, end) 1;
-  -ms-animation: logo 2.5s steps(25, end) 1;
-  -o-animation: logo 2.5s steps(25, end) 1;
-  animation: logo 2.5s steps(25, end) 1;
+    figure {
+      .border-radius(100%);
+      .transition(all 0.5s ease-in-out);
+      .opacity(0);
+      display: inline-block;
+      vertical-align: middle;
+      background: #FFF;
+      width: 14%;
+      height: 100%;
+      margin: 0 2%;
+
+      &:last-child { margin-right: 0}
+      &.show { .opacity(100) }
+
+      &.one { .transition(all 0.25s ease-in-out) }
+      &.two { .transition(all 0.5s ease-in-out .5s) }
+      &.three { .transition(all 0.75s ease-in-out 1s) }
+    }
+
+    .arrow_right {
+      .transition(all 0.25s ease);
+      .opacity(0);
+      position: relative;
+      background: #FFF;
+      display: inline-block;
+      vertical-align: middle;
+      width: 10%;
+      height: 15%;
+
+      &:last-child { margin-right: 0}
+
+      &:after {
+        left: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      &:after {
+        border-color: rgba(136, 183, 213, 0);
+        border-width: 160px;
+        top: 50%;
+        margin-top: -160px;
+      }
+
+      &.stretchRight {
+        .opacity(100);
+        &.one { .transition(all 0.25s ease-in-out .25s) }
+        &.two { .transition(all 0.5s ease-in-out .75s) }
+      }
+    }
+  }
 }
 
-h1 {
-  font-family: 'Short Stack', cursive;
+#hobbies {
+  .container {
+    position: absolute;
+    top: 50%;
+    margin: -125px 0 0;
+    text-align: center;
+    height: 250px;
+    width: 80%;
+    padding: 0 10%;
+
+    figure {
+      .transition(all .5s ease-out);
+      width: 250px;
+      height: 250px;
+      right: -10%;
+      position: absolute;
+
+      &.slideLeft {
+        right: 60%;
+        .rotate(-360deg);
+      }
+    }
+
+    header {
+      font-family: 'Ubuntu', sans-serif;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: right;
+      .opacity(0);
+      width: 45%;
+      .transition(all 1.25s linear);
+
+      &.show { .opacity(100); }
+
+      h1, h2 {
+        letter-spacing: 0.05em;
+        color: #FFF;
+        line-height: 1.75em;
+        font-size: 2em;
+      }
+
+      h2 { text-align: right; }
+
+      h1 {
+        font-size: 3em;
+      }
+    }
+
+    .eyes {
+      background: url(/img/eyes.png);
+      background-size: 200px;
+      width: 200px;
+      height: 50px;
+      position: absolute;
+      right: 45%;
+      .transition(all 0.5s ease-in-out 3s)
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hanging_lamp {
+  background: url("/img/light.png") left top no-repeat;
+  background-size: 400px;
   position: absolute;
-  font-size: 1.5em;
-  color: #FFF;
-  top: 45%;
-  left: 35%;
-  width: 10px;
-  line-height: 1em;
+  width: 200px;
+  height: 345px;
+  top: 0;
+  left: 50%;
+  margin-left: -200px;
+  z-index: 2;
+
+  -webkit-animation: light 0.15s steps(2, end) infinite;
+  -moz-animation: light 0.15s steps(2, end) infinite;
+  -ms-animation: light 0.15s steps(2, end) infinite;
+  -o-animation: light 0.15s steps(2, end) infinite;
+  animation: light 0.15s steps(2, end) infinite;
+}
+
+.character {
+  background: url("/img/character.png") left top no-repeat;
+  background-size: 2240px;
+  position: absolute;
+  width: 374px;
+  height: 663px;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
 }
 
 .desk {
   background: url("/img/desk.png") right top no-repeat;
-  background-size: 100%;
-  width: 20%;
-  height: 27.7%;
+  background-size: 600px;
+  width: 600px;
+  height: 355px;
   z-index: 2;
   position: absolute;
-  margin: 0px auto;
   text-indent: -9999px;
-  bottom: 0;
-  right: 15%;
+  bottom: 105px;
+  right: 600px;
+}
+
+.chair {
+  background: url("/img/chair.png") right top no-repeat;
+  background-size: 400px;
+  width: 400px;
+  height: 580px;
+  z-index: 2;
+  position: absolute;
+  text-indent: -9999px;
+  bottom: 60px;
+  right: 810px;
+}
+
+.computer {
+  background: url("/img/computer.png") right top no-repeat;
+  background-size: 250px;
+  width: 250px;
+  height: 280px;
+  z-index: 2;
+  position: absolute;
+  text-indent: -9999px;
+  bottom: 360px;
+  right: 810px;
 }
 
 .stand {
   background: url("/img/stand.png") right top no-repeat;
-  background-size: 100%;
-  width: 26%;
-  height: 27.7%;
+  background-size: 900px;
+  width: 900px;
+  height: 250px;
   z-index: 2;
   position: absolute;
   margin: 0px auto;
   text-indent: -9999px;
-  top: 15%;
-  left: 11%;
+  top: 700px;
+  left: 530px;
 }
 
 @-webkit-keyframes logo {
@@ -129,21 +392,42 @@ h1 {
 
 @-webkit-keyframes light {
   from { background-position: 0px; }
-  to { background-position: 200%; }
+  to { background-position: -50px; }
 }
 @-moz-keyframes light {
   from { background-position: 0px; }
-  to { background-position: 200%; }
+  to { background-position: -50px; }
 }
 @-ms-keyframes light {
   from { background-position: 0px; }
-  to { background-position: 200%; }
+  to { background-position: -50px; }
 }
 @-o-keyframes light {
   from { background-position: 0px; }
-  to { background-position: 200%; }
+  to { background-position: -50px; }
 }
 @keyframes light {
   from { background-position: 0px; }
-  to { background-position: 200%; }
+  to { background-position: -400px; }
+}
+
+@-webkit-keyframes front {
+  from { background-position: 0px; }
+  to { background-position: -50px; }
+}
+@-moz-keyframes front {
+  from { background-position: 0px; }
+  to { background-position: -50px; }
+}
+@-ms-keyframes front {
+  from { background-position: 0px; }
+  to { background-position: -50px; }
+}
+@-o-keyframes front {
+  from { background-position: 0px; }
+  to { background-position: -50px; }
+}
+@keyframes front {
+  from { background-position: 0px; }
+  to { background-position: -3240px; }
 }
