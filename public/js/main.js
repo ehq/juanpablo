@@ -44,9 +44,17 @@
                     $(this).addClass("floating");
                 }
             });
+
+            $('#hobbies header').each(function(){
+                var imagePos = $(this).offset().top;
+
+                if (imagePos < topOfWindow+400) {
+                    $(this).addClass("show");
+                }
+            });
         });
 
-        $('header').addClass('show');
+        $('#presentation header').addClass('show');
 
         $('.scrollTo').click(function(){
           // Scroll to the anchored section.
