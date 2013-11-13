@@ -6,12 +6,51 @@ html, body {
   background: #D0E2E9;
   font-size: 100%;
   min-width: 320px;
+  overflow: hidden;
 }
 
 body {
   position: relative;
-  font-family: 'Lora', serif;
+  font-family: 'Ubuntu', serif;
 	background: #E9F5FA;
+}
+
+ul {
+  position: fixed;
+  left: 2%;
+  top: 50%;
+  height: 10%;
+  width: 15px;
+  margin-top: -5%;
+  li {
+    position: relative;
+    display: block;
+    margin: 15px 0;
+    span {
+      .border-radius(100%);
+      cursor: pointer;
+      display: block;
+      background: #FFF;
+      width: 15px;
+      height: 15px;
+      &.selected { background: #0679b2; }
+    }
+    p {
+      color: #FFF;
+      position: absolute;
+      width: 0px;
+      overflow: hidden;
+      left: 20px;
+      .transition(width .25s linear 1s);
+      &.selected { 
+        color: #0679b2;
+        width: 100px; 
+      }
+    }
+    &:hover p {
+      width: 100px;
+    }
+  }
 }
 
 section {
@@ -28,8 +67,7 @@ section {
   &#contact { background: #E2E2E2; }
   &#hobbies { background: #333; }
 
-  .scrollDown,
-  .scrollUp {
+  .scrollTo {
     cursor: pointer;
     position: absolute;
     bottom: 0;
@@ -45,7 +83,7 @@ section {
       color: #FFF;
     }
   }
-  .scrollUp { bottom: auto; top: 0; }
+  .top { bottom: auto; top: 0; }
 }
 
 #presentation {
@@ -216,32 +254,17 @@ section {
   .container {
     position: absolute;
     top: 50%;
-    margin: -125px 0 0;
+    margin: -175px 0 0;
     text-align: center;
-    height: 250px;
-    width: 80%;
-    padding: 0 10%;
-
-    figure {
-      .transition(all .5s ease-out);
-      width: 250px;
-      height: 250px;
-      right: -10%;
-      position: absolute;
-
-      &.slideLeft {
-        right: 60%;
-        .rotate(-360deg);
-      }
-    }
+    height: 350px;
+    width: 60%;
+    padding: 0 20%;
 
     header {
       font-family: 'Ubuntu', sans-serif;
-      display: inline-block;
-      vertical-align: middle;
-      text-align: right;
       .opacity(0);
-      width: 45%;
+      width: 70%;
+      margin: 0 auto;
       .transition(all 1.25s linear);
 
       &.show { .opacity(100); }
@@ -251,23 +274,31 @@ section {
         color: #FFF;
         line-height: 1.75em;
         font-size: 2em;
+        opacity: 0;
+        .transition(all 1.25s linear .5s);
       }
 
-      h2 { text-align: right; }
+      h2 { text-align: left; }
 
       h1 {
         font-size: 3em;
+        text-align: right;
+        .transition(all 1.25s linear 2.25s);
       }
+
+      &.show h1, 
+      &.show h2,
+      &.show .eyes { .opacity(100) }
     }
 
     .eyes {
-      background: url(/img/eyes.png);
-      background-size: 200px;
-      width: 200px;
-      height: 50px;
-      position: absolute;
-      right: 45%;
-      .transition(all 0.5s ease-in-out 3s)
+      background: url(/img/eyes.png) no-repeat;
+      background-size: 300px;
+      width: 300px;
+      height: 80px;
+      margin: 15% auto;
+      .opacity(0);
+      .transition(all 0.5s ease-in-out 2s)
     }
   }
 }

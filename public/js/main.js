@@ -48,12 +48,14 @@
 
         $('header').addClass('show');
 
-        // Docs sidebar list functionality.
-        $('.scrollDown, .scrollUp').click(function(){
+        $('.scrollTo').click(function(){
           // Scroll to the anchored section.
           $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top
           }, 500);
+          $('.scrollTo, p').removeClass('selected');
+          $(this).addClass('selected');
+          $(this).prev().addClass('selected');
           return false;
         });
 
