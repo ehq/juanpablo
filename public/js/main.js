@@ -1,93 +1,75 @@
 (function() {
+
     $(document).ready(function() {
-        $(window).scroll(function() {
+        function goToLayer(layerId) {
+            var $current = $('.layer.current');
+            var $next = $(layerId);
 
-            var topOfWindow = $(window).scrollTop();
+            $current.removeClass('current');
+            $next.addClass('current');
+            
+            // If the target layer is after the current one...
+            if ($next.prevAll('#' + $current.attr('id')).length !== 0) {
+                $current.css({"top":"-100%"});
+                $next.css({"top":"0"});
+            } else {
+                $current.css({"top":"100%"});
+                $next.css({"top":"0"});
+            }
+        }
 
-            $('.bar').each(function(){
-                var imagePos = $(this).offset().top;
+        function nextLayer() {
+            var $current = $('.layer.current');
+            var $next = $current.next('.layer');
 
-                if (imagePos < topOfWindow+700) {
-                    $(this).addClass("pullUp");
-                }
-            });
+            if ($next.length === 0) {
+                return;
+            }
 
-            $('#creation figure').each(function(){
-                var imagePos = $(this).offset().top;
+            $current.removeClass('current');
+            $next.addClass('current');
+            
+            $current.css({"top":"-100%"});
+            $next.css({"top":"0"});
+        }
 
-                if (imagePos < topOfWindow+400) {
-                    $(this).addClass("show");
-                    $(this).addClass("slideUp");
-                }
-            });
+        function prevLayer() {
+            var $current = $('.layer.current');
 
-            $('span.arrow_right').each(function(){
-                var imagePos = $(this).offset().top;
+            var $prev = $current.prev('.layer');
 
-                if (imagePos < topOfWindow+400) {
-                    $(this).addClass("stretchRight");
-                }
-            });
+            if ($prev.length === 0) {
+                return;
+            }
 
-            $('#hobbies figure').each(function(){
-                var imagePos = $(this).offset().top;
+            $current.removeClass('current');
+            $prev.addClass('current');
 
-                if (imagePos < topOfWindow+400) {
-                    $(this).addClass("slideLeft");
-                }
-            });
+            $current.css({"top":"100%"});
+            $prev.css({"top":"0"});
+        }
 
-            $('.eyes').each(function(){
-                var imagePos = $(this).offset().top;
-
-                if (imagePos < topOfWindow+400) {
-                    $(this).addClass("floating");
-                }
-            });
-
-            $('#hobbies header').each(function(){
-                var imagePos = $(this).offset().top;
-
-                if (imagePos < topOfWindow+400) {
-                    $(this).addClass("show");
-                }
-            });
-
-            $('button').each(function(){
-                var imagePos = $(this).offset().top;
-
-                if (imagePos < topOfWindow+400) {
-                    $(this).addClass("shake");
-                }
-            });
-
-            $('#contact a').each(function(){
-                var imagePos = $(this).offset().top;
-
-                if (imagePos < topOfWindow+800) {
-                    $(this).addClass("flipInX");
-                }
-            });
-
-            $('#contact a').hover(function(){
-                $(this).removeClass("flipInX");
-                $(this).toggleClass("bounce");
-            });
-
-
+        $("body").keydown(function(e) {
+          if(e.keyCode == 38) { // up
+            prevLayer();
+          }
+          if(e.keyCode == 40) { // down
+            nextLayer();
+          }
         });
 
-        $('#presentation header').addClass('show');
+        $('.scrollDown').click(function() {
+            nextLayer();
+        });
 
-        $('.scrollTo').click(function(){
-            // Scroll to the anchored section.
-            $('html, body').animate({
-                scrollTop: $( $.attr(this, 'href') ).offset().top
-            }, 500);
+        $('.scrollUp').click(function() {
+            prevLayer();
+        });
 
-            $('.scrollTo, p').removeClass('selected');
-            $(this).addClass('selected');
-            $(this).prev().addClass('selected');
+        $('.scrollTo').click(function() {
+            var layerId = $(this).attr('href');
+
+            goToLayer(layerId);
             
             return false;
         });

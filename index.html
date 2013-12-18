@@ -13,9 +13,9 @@
   </head>
 
   <body>
-    <section id="presentation">
+    <section id="presentation" class="layer current">
       <div class="container">
-        <figure class="slideDown">
+        <figure>
           <img src="/img/photo.jpg" width="100%" />
         </figure>
         <header>
@@ -27,35 +27,37 @@
           </h2>
         </header>
       </div>
-      <span class="scrollTo" href="#contact">&#8744;</span>
+      <span class="scrollDown" href="#social">&#8744;</span>
     </section>
-    <section id="contact">
-      <span class="scrollTo top" href="#presentation">&#8743;</span>
+    <section id="social" class="layer">
+      <span class="scrollUp" href="#presentation">&#8743;</span>
       <div class="container">
         <a class="gmail" href="gmail.com" target="_blank">
         </a> 
+        <a class="hotmail" href="skype.com" target="_blank">
+        </a>
+        <a class="facebook" href="gmail.com" target="_blank">
+        </a> 
+        <a class="google" href="linkedin.com" target="_blank">
+        </a>
+        <hr />
         <a class="skype" href="skype.com" target="_blank">
         </a>
-        <span>
-          Contact me
-        </span>
-        <hr />
-        <span>
-          See my work
-        </span>
         <a class="linkedin" href="linkedin.com" target="_blank">
+        </a>
+        <a class="dribble" href="behance.com" target="_blank">
         </a>
         <a class="behance" href="behance.com" target="_blank">
         </a>
       </div>
-      <span class="scrollTo" href="#creation">&#8744;</span>
+      <span class="scrollDown" href="#creation">&#8744;</span>
     </section>
 
-    <section id="creation">
-      <span class="scrollTo top" href="#contact">&#8743;</span>
+    <section id="creation" class="layer">
+      <span class="scrollUp" href="#social">&#8743;</span>
       <div class="container">
         <figure class="one">
-          <p>Creation</p>
+          <p>Concept</p>
         </figure>
         <span class="arrow_right one"></span>
         <figure class="two">
@@ -66,11 +68,11 @@
           <p>Code</p>
         </figure>
       </div>
-      <span class="scrollTo" href="#abilities">&#8744;</span>
+      <span class="scrollDown" href="#skills">&#8744;</span>
     </section>
 
-    <section id="abilities">
-      <span class="scrollTo top" href="#creation">&#8743;</span>
+    <section id="skills" class="layer">
+      <span class="scrollUp" href="#creation">&#8743;</span>
       <div class="container">
         <div class="bar one">
           <span>Design</span>
@@ -79,17 +81,17 @@
           <span>Code</span>
         </div>
         <div class="bar three">
-          <span>Expertise</span>
+          <span></span>
         </div>
         <div class="bar four">
-          <span>Coolness</span>
+          <span>Gaming</span>
         </div>
       </div>
-      <span class="scrollTo" href="#hobbies">&#8744;</span>
+      <span class="scrollDown" href="#hobbies">&#8744;</span>
     </section>
 
-    <section id="hobbies">
-      <span class="scrollTo top" href="#abilities">&#8743;</span>
+    <section id="hobbies" class="layer">
+      <span class="scrollUp" href="#skills">&#8743;</span>
       <div class="container">
         <header>
           <h2>
@@ -97,7 +99,7 @@
           </h2>
           <div class="eyes"></div>
           <h1>
-            I'm a freaking Ninja!
+            I'm a Ninja!
           </h1>
         </header>
       </div>
@@ -105,19 +107,19 @@
     <ul>
       <li>
         <p>Presentation</p>
-        <span class="scrollTo" href="#presentation"></span>
+        <span class="scrollTo selected" href="#presentation"></span>
       </li>
       <li>
-        <p>Contact</p>
-        <span class="scrollTo" href="#contact"></span>
+        <p>Connect</p>
+        <span class="scrollTo" href="#social"></span>
       </li>
       <li>
-        <p>Creation</p>
+        <p>Flow</p>
         <span class="scrollTo" href="#creation"></span>
       </li>
       <li>
-        <p>Abilities</p>
-        <span class="scrollTo" href="#abilities"></span>
+        <p>Skills</p>
+        <span class="scrollTo" href="#skills"></span>
       </li>
       <li>
         <p>Hobbies</p>
