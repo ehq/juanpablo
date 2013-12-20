@@ -298,7 +298,6 @@ section {
   }
 }
 
-
 #skills {
   .container {
     position: absolute;
@@ -491,153 +490,49 @@ section {
   }
 }
 
+/*
+==============================================
+Animation Triggers
+==============================================
+*/
 
+#presentation.current {
+  figure {
+    .opacity(100);
+    .slideUp;
+  }
+  header { .slideLeft; }
+}
 
-#presentation { 
-  background: #b5d9e7;
-  &.current {
-    figure {
-      .opacity(100);
-      .slideUp;
-    }
-    header {
-      .slideLeft;
-    }
+#skills.current {
+  figure {
+    .opacity(100);
+    .slideUp;
+  }
+  .arrow_right {
+    .opacity(100);
+    .stretchRight;
   }
 }
 
-#skills { 
-  background: #ec6f66;
-  &.current {
-    figure {
-      .opacity(100);
-      .slideUp;
-    }
-    .arrow_right {
-      .opacity(100);
-      .stretchRight;
-    }
+#creation.current {
+  figure {
+    .opacity(100);
+    .slideUp;
+  }
+  .arrow_right {
+    .opacity(100);
+    .stretchRight;
   }
 }
 
-#creation { 
-  background: #80ccb6;
-  &.current {
-    figure {
-      .opacity(100);
-      .slideUp;
-    }
-    .arrow_right {
-      .opacity(100);
-      .stretchRight;
-    }
+#social.current {
+  a { .flipInX; }
+}
+
+#hobbies.current {
+  h1, h2, .eyes {
+    .opacity(100) !important;
   }
-}
-
-#social { 
-  background: #fdc156;
-  &.current {
-    a {
-      .flipInX;
-    }
-  }
-}
-
-#hobbies { 
-  background: #333; 
-  &.current {
-    h1, h2, .eyes {
-      .opacity(100) !important;
-    }
-  }
-}
-
-
-
-
-
-
-
-.hanging_lamp {
-  background: url("/img/light.png") left top no-repeat;
-  background-size: 400px;
-  position: absolute;
-  width: 200px;
-  height: 345px;
-  top: 0;
-  left: 50%;
-  margin-left: -200px;
-  z-index: 2;
-
-  -webkit-animation: light 0.15s steps(2, end) infinite;
-  -moz-animation: light 0.15s steps(2, end) infinite;
-  -ms-animation: light 0.15s steps(2, end) infinite;
-  -o-animation: light 0.15s steps(2, end) infinite;
-  animation: light 0.15s steps(2, end) infinite;
-}
-
-.character {
-  background: url("/img/character.png") left top no-repeat;
-  background-size: 2240px;
-  position: absolute;
-  width: 374px;
-  height: 663px;
-  bottom: 20px;
-  left: 50%;
-  z-index: 2;
-}
-
-.desk {
-  background: url("/img/desk.png") right top no-repeat;
-  background-size: 600px;
-  width: 600px;
-  height: 355px;
-  z-index: 2;
-  position: absolute;
-  text-indent: -9999px;
-  bottom: 105px;
-  right: 600px;
-}
-
-.chair {
-  background: url("/img/chair.png") right top no-repeat;
-  background-size: 400px;
-  width: 400px;
-  height: 580px;
-  z-index: 2;
-  position: absolute;
-  text-indent: -9999px;
-  bottom: 60px;
-  right: 810px;
-}
-
-.computer {
-  background: url("/img/computer.png") right top no-repeat;
-  background-size: 250px;
-  width: 250px;
-  height: 280px;
-  z-index: 2;
-  position: absolute;
-  text-indent: -9999px;
-  bottom: 360px;
-  right: 810px;
-}
-
-.stand {
-  background: url("/img/stand.png") right top no-repeat;
-  background-size: 900px;
-  width: 900px;
-  height: 250px;
-  z-index: 2;
-  position: absolute;
-  margin: 0px auto;
-  text-indent: -9999px;
-  top: 700px;
-  left: 530px;
-}
-
-
-.disable-hover {
-  pointer-events: none;
 }
 
