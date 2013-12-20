@@ -298,6 +298,7 @@ section {
   }
 }
 
+
 #skills {
   .container {
     position: absolute;
@@ -496,43 +497,57 @@ Animation Triggers
 ==============================================
 */
 
-#presentation.current {
-  figure {
-    .opacity(100);
-    .slideUp;
-  }
-  header { .slideLeft; }
-}
-
-#skills.current {
-  figure {
-    .opacity(100);
-    .slideUp;
-  }
-  .arrow_right {
-    .opacity(100);
-    .stretchRight;
+#presentation { 
+  background: #b5d9e7;
+  &.current {
+    figure {
+      .opacity(100);
+      .slideUp;
+    }
+    header { .slideLeft; }
   }
 }
 
-#creation.current {
-  figure {
-    .opacity(100);
-    .slideUp;
-  }
-  .arrow_right {
-    .opacity(100);
-    .stretchRight;
-  }
-}
-
-#social.current {
-  a { .flipInX; }
-}
-
-#hobbies.current {
-  h1, h2, .eyes {
-    .opacity(100) !important;
+#skills { 
+  background: #ec6f66;
+  &.current {
+    figure {
+      .opacity(100);
+      .slideUp;
+    }
+    .arrow_right {
+      .opacity(100);
+      .stretchRight;
+    }
   }
 }
 
+#creation { 
+  background: #80ccb6;
+  &.current {
+    figure {
+      .opacity(100);
+      .slideUp;
+    }
+    .arrow_right {
+      .opacity(100);
+      .stretchRight;
+    }
+  }
+}
+
+#social { 
+  background: #fdc156;
+  &.current {
+    a { .flipInX; }
+  }
+}
+
+#hobbies { 
+  background: #333; 
+  &.current {
+    h1, h2, .eyes {
+      .opacity(100) !important;
+    }
+  }
+}
