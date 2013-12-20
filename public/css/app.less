@@ -21,10 +21,12 @@ ul {
   height: 10%;
   width: 15px;
   margin-top: -5%;
+
   li {
     position: relative;
     display: block;
     margin: 15px 0;
+
     span {
       .border-radius(100%);
       cursor: pointer;
@@ -34,6 +36,7 @@ ul {
       height: 15px;
       &.selected { background: #0679b2; }
     }
+
     p {
       color: #FFF;
       position: absolute;
@@ -46,6 +49,7 @@ ul {
         width: 100px; 
       }
     }
+
     &:hover p {
       width: 100px;
     }
@@ -68,9 +72,7 @@ section {
   overflow: hidden;
   .transition(all .5s linear);
 
-  &.current {
-    top: 0;
-  }
+  &.current { top: 0; }
 
   .scrollUp,
   .scrollDown,
@@ -136,9 +138,7 @@ section {
 
       h2 { text-align: right; }
 
-      h1 {
-        font-size: 3em;
-      }
+      h1 { font-size: 3em; }
     }
   }
 }
@@ -191,110 +191,56 @@ section {
         .opacity(0);
       }
 
+      &:hover:after { .opacity(100); }
+
       &:active { top: 1px; }
 
       &.gmail { 
         background-position: 0 0;
-        &:after {
-          background-position: 0 0; 
-        }
-        &:hover {
-          &:after {
-            background-position: 0 -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: 0 0;}
+        &:hover:after { background-position: 0 -100px; }
       }
 
       &.hotmail { 
         background-position: -100px 0;
-        &:after {
-          background-position: -100px -100px; 
-        }
-        &:hover {
-          &:after {
-            background-position: -100px -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: -100px -100px; }
+        &:hover:after { background-position: -100px -100px; }
       }
 
       &.facebook { 
         background-position: -200px 0;
-        &:after {
-          background-position: -200px -100px; 
-        }
-        &:hover {
-          &:after {
-            background-position: -200px -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: -200px -100px; }
+        &:hover:after { background-position: -200px -100px; }
       }
 
       &.google { 
         background-position: -300px 0;
-        &:after {
-          background-position: -300px -100px; 
-        }
-        &:hover {
-          &:after {
-            background-position: -300px -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: -300px -100px; }
+        &:hover:after { background-position: -300px -100px; }
       }
 
       &.skype { 
         background-position: -400px 0;
-        &:after {
-          background-position: -400px -100px; 
-        }
-        &:hover {
-          &:after {
-            background-position: -400px -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: -400px -100px; }
+        &:hover:after { background-position: -400px -100px; }
       }
 
       &.linkedin {
         background-position: -500px 0;
-        &:after {
-          background-position: -500px -100px; 
-        }
-        &:hover {
-          &:after {
-            background-position: -500px -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: -500px -100px; }
+        &:hover:after {background-position: -500px -100px; }
       }
 
       &.dribble {
         background-position: -600px 0;
-        &:after {
-          background-position: -600px -100px; 
-        }
-        &:hover {
-          &:after {
-            background-position: -600px -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: -600px -100px; }
+        &:hover:after { background-position: -600px -100px; }
       }
 
       &.behance {
         background-position: -700px 0;
-        &:after {
-          background-position: -700px -100px; 
-        }
-        &:hover {
-          &:after {
-            background-position: -700px -100px; 
-            .opacity(100);
-          }
-        }
+        &:after { background-position: -700px -100px; }
+        &:hover:after { background-position: -700px -100px; }
       }
     }
   }
