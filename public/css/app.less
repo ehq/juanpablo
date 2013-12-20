@@ -291,6 +291,7 @@ section {
     .bar {
       .opacity(100);
       .pullUp;
+      
       &:hover {
         &.one { margin-top: 10%; height: 50%; }
         &.two { margin-top: 10%; height: 65%; }
@@ -302,7 +303,7 @@ section {
 }
 
 
-#creation {
+#workflow {
 
   .container {
     position: absolute;
@@ -329,16 +330,16 @@ section {
       &:first-child { margin-left: 0}
       &.show { .opacity(100) }
 
-      &.one { 
+      &.concept { 
         background: #fff url(/img/creation.png) center center no-repeat;
         background-size: 120px;
         .transition(all 0.25s ease-in-out) }
-      &.two { 
+      &.sketch { 
         background: #fff url(/img/sketch.png) center center no-repeat;
         background-size: 120px;
         .transition(all 0.5s ease-in-out .5s) 
       }
-      &.three {
+      &.code {
         background: #fff url(/img/code.png) center center no-repeat;
         background-size: 120px; 
         .transition(all 0.75s ease-in-out 1s) 
@@ -470,7 +471,7 @@ Animation Triggers
   }
 }
 
-#creation { 
+#workflow { 
   background: #80ccb6;
   &.current {
     figure {
