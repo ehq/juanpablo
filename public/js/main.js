@@ -66,10 +66,17 @@
             prevLayer();
         });
 
+        /* Functionality for aside nav (currently not working) */
+
         $('.scrollTo').click(function() {
             var layerId = $(this).attr('href');
 
             goToLayer(layerId);
+
+            /* FIXME */
+
+            $('ul').find('*').removeClass('selected');
+            $(this).parent().find('*').addClass('selected');
             
             return false;
         });
