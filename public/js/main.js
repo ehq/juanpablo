@@ -31,6 +31,9 @@
             
             $current.css({"top":"-100%"});
             $next.css({"top":"0"});
+
+            $('#navigation li *').removeClass('selected');
+            $("[href=#" + $next.attr('id') + "]").parent().find('*').addClass('selected');
         }
 
         function prevLayer() {
@@ -47,6 +50,9 @@
 
             $current.css({"top":"100%"});
             $prev.css({"top":"0"});
+
+            $('#navigation li *').removeClass('selected');
+            $("[href=#" + $prev.attr('id') + "]").parent().find('*').addClass('selected');
         }
 
         $("body").keydown(function(e) {
@@ -66,14 +72,13 @@
             prevLayer();
         });
 
-        /* Functionality for aside nav (currently not working) */
+        /* Functionality for aside nav */
 
         $('.scrollTo').click(function() {
             var layerId = $(this).attr('href');
 
             goToLayer(layerId);
 
-            /* FIXME */
 
             $('ul').find('*').removeClass('selected');
             $(this).parent().find('*').addClass('selected');

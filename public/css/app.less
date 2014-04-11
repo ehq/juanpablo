@@ -5,7 +5,6 @@
 html, body {
   font-size: 100%;
   min-width: 320px;
-  overflow: hidden;
 }
 
 body {
@@ -16,6 +15,7 @@ body {
 
 ul {
   position: fixed;
+  z-index: 1;
   left: 2%;
   top: 50%;
   height: 10%;
@@ -64,14 +64,19 @@ hr {
 section {
   display: block;
   clear: both;
-  position: absolute;
+  position: fixed;
   top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: -1;
+  .transition(all 0.35s linear);
 
-  &.current { top: 0; }
+  &.current { 
+    top: 0;
+    z-index: 1;
+  }
 
   .scrollUp,
   .scrollDown,
