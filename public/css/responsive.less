@@ -13,7 +13,7 @@
   }
 
   ul {
-    left: 2em;
+    left: 1em;
     top: 50%;
     height: 100%;
     width: auto;
@@ -71,20 +71,19 @@
   #presentation {
 
     .container {
-      position: absolute;
       right: 0;
       top: 0;
       margin: 0;
-      height: 70%;
+      height: 60%;
       width: 80%;
-      padding: 15% 10%;
+      padding: 20% 10%;
 
       figure {
         display: block;
         text-align: center;
         height: 45%;
         width: 45%;
-        margin: 10% auto 10%;
+        margin: 14% auto 10%;
       }
 
       header {
@@ -94,12 +93,131 @@
 
         h1, h2 {
           letter-spacing: 0.05em;
-          color: #666;
           line-height: 1.5em;
           font-size: 2em;
         }
 
         h1 { font-size: 2.5em; }
+      }
+    }
+  }
+
+  #connect {
+
+    .container {
+      right: 0;
+      top: 0;
+      margin: 0;
+      height: 60%;
+      width: 50%;
+      padding: 20% 25%;
+
+      a {
+        margin: 5% !important;
+
+        &.gmail    { margin-left: 10% !important; }
+        &.facebook { margin-left: -10% !important; }
+        &.skype    { margin-left: 10% !important; }
+        &.behance  { margin-left: -10% !important; } 
+      }
+    }
+  }
+
+  #workflow {
+
+    .container {
+      right: 0;
+      top: 0;
+      margin: 0;
+      height: 60%;
+      width: 70%;
+      padding: 20% 15%;
+
+      figure {
+        width: 150px;
+        height: 150px;
+        margin: 0 0 0 10%;
+        background: #FFF;
+
+        &:last-child { margin: 30% auto 0; }
+        &:first-child { margin-right: 5%; }
+      }
+
+      p {
+        font-size: 1.5em;
+        bottom: -40px;
+        left: 0;
+      }
+
+      .arrow_right {
+        width: 50px;
+        height: 30px;
+
+        &:last-of-type {
+          position: absolute;
+          .rotate(120deg);
+          top: 48%;
+          right: 25%;
+        }
+      }
+    }
+  }
+
+  #skills {
+    .container {
+      right: 0;
+      top: 0;
+      margin: 0;
+      height: 60%;
+      width: 84%;
+      padding: 20% 8%;
+
+      .bar {
+        width: 20%;
+        margin-right: 3%;
+      }
+
+      span {
+        color: #705b90;
+        width: 100%;
+        margin-right: 5%;
+        text-align: center;
+        font-size: 1.5em;
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+      }
+    }
+  }
+
+  #hobbies {
+    .container {
+      right: 0;
+      top: 0;
+      margin: 0;
+      height: 60%;
+      width: 80%;
+      padding: 20% 10%;
+
+      header {
+        width: 100%;
+        margin: 10% auto;
+
+        h1, h2 {
+          letter-spacing: 0.05em;
+          line-height: 1.5em;
+          font-size: 2.5em;
+          text-align: center
+        }
+
+        h1 { font-size: 3em; }
+      }
+
+      .eyes {
+        background-size: 2400px;
+        width: 300px;
+        height: 80px;
+        margin: 15% auto;
       }
     }
   }
