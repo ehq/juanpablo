@@ -18,9 +18,9 @@ ul {
   z-index: 1;
   left: 2%;
   top: 50%;
-  height: 10%;
+  height: 166px;
   width: 15px;
-  margin-top: -5%;
+  margin-top: -83px;
 
   li {
     position: relative;
@@ -44,15 +44,14 @@ ul {
       overflow: hidden;
       left: 20px;
       .transition(width .25s linear);
+
       &.selected { 
         color: #0679b2;
         width: 100px; 
       }
     }
 
-    &:hover p {
-      width: 100px;
-    }
+    &:hover p { width: 100px; }
   }
 }
 
@@ -96,6 +95,9 @@ section {
       color: #FFF;
     }
   }
+
+  .scrollUp p, .scrollDown p { .floating; }
+
   .scrollUp { bottom: auto; top: 0; }
 }
 
@@ -504,3 +506,5 @@ Animation Triggers
     }
   }
 }
+
+@import "responsive";
